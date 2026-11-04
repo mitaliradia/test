@@ -11,6 +11,12 @@ def check_leave_balance(balance,requested):
 
     return True
 
+def calculate_remaining_balance(balance,requested):
+    if check_leave_balance(balance,requested):
+        return balance-requested
+
+    return balance
+
 @app.route("/")
 def home():
     return "Welcome to the Leave Management System!"
